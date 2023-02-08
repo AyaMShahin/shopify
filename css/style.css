@@ -10,7 +10,9 @@
   src: url("../fonts/MediumRegular.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
   font-weight: 200;
 }
-
+.shopify-medium {
+  font-family: "Shopify Sans Web Medium Regular", Arial, Helvetica, sans-serif;
+}
 @font-face {
   font-family: "Shopify Sans Regular";
   src: url("../fonts/ShopifySansWebRegular.ttf") format("truetype"); /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
@@ -46,8 +48,23 @@ svg {
   animation: arrow-right 0.6s alternate ease-in-out;
   /* transition: 0.5s ease; */
 }
+.arrow-sm::after {
+  font-family: "Font Awesome 5 free"; /* change like this */
+  font-weight: 900; /* insert this definition */
+  font-size: 18px;
+  content: "\f0da";
+  display: inline-block;
+  color: #000;
+}
 .text-sm {
   font-size: 0.875rem;
+}
+.text-lg {
+  font-size: 1.375rem;
+}
+.text-xsm {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 .minus {
   margin-top: -5px;
@@ -61,6 +78,22 @@ svg {
     transform: translateX(-10px);
     /* opacity: 1; */
   }
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #9ca3afab;
+  font-weight: 300;
+  font-family: "Shopify Sans Regular", Arial, Helvetica, sans-serif;
+  opacity: 0.8; /* Firefox */
+}
+.btn {
+  background-color: #000;
+  color: #fff;
+  border-radius: 1000px;
+  padding: 9px 15px;
+}
+.btn:hover {
+  background-color: rgb(61 63 64);
 }
 /* *****************************************************End Common Styles******************************************************* */
 
@@ -77,11 +110,17 @@ header .alert {
   font-size: 30px;
 }
 header .navbar {
-  background-color: #fff !important; /* For browsers that do not support gradients */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.47
+  ) !important; /*For browsers that do not support gradients*/
   /* background-image: linear-gradient(
     #fff,
     rgba(189, 189, 188, 0.637)
   ) !important; */
+  /* opacity: 0.7; */
 }
 header .navbar::after {
   content: "";
@@ -121,9 +160,82 @@ header nav .collapse form .login:hover {
   text-decoration: underline;
   cursor: pointer;
 }
-header nav .collapse form .btn {
-  background-color: rgb(61 63 64);
-  color: #fff;
+
+/* Nav End */
+
+/* Platform Styles */
+.platform {
+  padding-top: 50px;
+  /* position: relative; */
+  --tw-blur: blur(10px);
+  background-image: linear-gradient(
+    203deg,
+    rgba(132, 174, 241, 0.867) 8.4%,
+    rgba(38, 238, 159, 0.47) 30.67%,
+    rgba(21, 188, 223, 0.333) 70.04%,
+    rgba(255, 255, 255, 0) 85%
+  );
+}
+.platform::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 134px;
+  left: 0;
+  pointer-events: none;
+  background-image: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 1) 90%
+  );
+  width: 100%;
+  height: 45px;
+}
+/* .platform::after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  display: block;
+  --tw-blur: blur(10px);
+  background-image: linear-gradient(
+    203deg,
+    rgba(132, 174, 241, 0.867) 8.4%,
+    rgba(38, 238, 159, 0.47) 30.67%,
+    rgba(21, 188, 223, 0.333) 70.04%,
+    rgba(255, 255, 255, 0) 85%
+  );
+} */
+.platform .content .left .video {
+  background-color: transparent;
   border-radius: 1000px;
-  padding: 9px 15px;
+  border: 1px solid rgb(202 212 215);
+  padding: 10px 25px;
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+  max-width: 50%;
+}
+.platform .content .left .video:hover {
+  border-color: rgb(168 177 180);
+}
+.platform .content .left .head h1 {
+  font-size: 6rem;
+  line-height: 1;
+  font-weight: 700;
+}
+.platform .content .left .email-form {
+  border-radius: 1000px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  padding: 4px 5px;
+}
+.platform .content .left .email-form input {
+  border: 0;
+  margin-left: 14px;
+}
+.platform .content .left .email-form .btn {
+  padding: 15px 35px;
 }
