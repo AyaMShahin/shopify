@@ -5,6 +5,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
+    crossorigin="anonymous"></script>
+
+  <script src="js/jquery-3.6.3.min.js"></script>
+  <!-- Main Script file -->
+  <script src="js/main.js"></script>
   <!-- Bootstrap link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -257,32 +264,98 @@
             </a>
             <div class="head shopify-medium mt-5">
               <h1>The global commerce platform</h1>
-              <p class="shopify-regular mt-5 text-lg">Build your business with Shopify to sell online, offline, and
+              <p class="shopify-regular mt-5 text-lg max">Build your business with Shopify to sell online, offline, and
                 everywhere
                 in
                 between. </p>
             </div>
-            <div class="email-form w-100 d-flex flex-row justify-content-between align-items-center mt-3"
+            <div class="email-form max d-flex flex-row justify-content-between align-items-center mt-3"
               data-component-name="email-form-input-wrapper">
               <input type="email" name="email" id="email" placeholder="Enter your email address">
               <button class="btn ml-4 my-2 my-sm-0" type="submit">Start
                 free trial</button>
             </div>
-            <div class="try shopify-regular">
+            <div class="try shopify-regular max">
               <p class="text-xsm mt-5">Try Shopify free for 3 days, no credit card required. By entering your email, you
                 agree to receive
                 marketing emails from Shopify.</p>
             </div>
           </div>
-          <div class="right">
-            <div class="right-content d-flex flex-row">
-              <div class="list d-flex flex-column">
-                <div class="presentation">
-                  <img src="" alt="">
+          <div class="right col-6">
+            <div class="right-content d-flex flex-row justify-content-around">
+              <div class="list width-1 d-flex flex-column">
+
+                <div class="net-sales d-flex flex-column justify-content-start">
+                  <span>Net Sales</span>
+                  <span id="dynamic-number">59.333</span>
+                  <span class="" id="precent"></span>
+                </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale" src="./images/hero5-smal.webp" alt="hero5">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/ThirdCrownLogo.svg" alt="Third Crown Logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">Kristin & Kofi Essel</h3>
+                        <p class="text-xsm">Co-Founders, Creative & Design Directors</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="downloads border-radius  d-flex flex-row justify-content-start ">
+                  <img class="object-fit scale mr-2" src="./images/inbox.png" alt=" import" width="24" height="25">
+                  <span id="value"> </span>
+                  <span class="ml-2 shopify-regular">
+                    <span class="shopify-medium font-w">orders</span> to fulfill
+                  </span>
+
+                </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale" src="./images/hero2-small.webp" alt="hero2">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/TheSill-logo.svg" alt="TheSill-logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">Eliza Blank</h3>
+                        <p class="text-xsm">Founder & CEO</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale" src="./images/hero4-smal.webp" alt="hero4">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/KirrinFinchLogo.svg" alt="Kirrin Finch Logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">Laura & Kelly Moffat</h3>
+                        <p class="text-xsm">Founders</p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              <div class="list"></div>
+              <div class="list col-3"></div>
             </div>
           </div>
         </div>
