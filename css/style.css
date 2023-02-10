@@ -604,3 +604,56 @@ header nav .collapse form .login:hover {
   font-size: 1.625rem;
   text-align: center;
 }
+/* End grow */
+
+/* Footer */
+footer {
+  padding-top: 100px;
+  background-color: #000;
+  color: #fff;
+}
+footer ul {
+  list-style-type: none;
+}
+footer .list {
+  flex-grow: 1;
+  margin-right: 25px;
+}
+footer .list li {
+  margin-bottom: 15px;
+}
+footer .content a {
+  color: rgb(224 224 224);
+  font-family: "Shopify Sans Regular", Arial, Helvetica, sans-serif !important;
+  font-weight: 300;
+}
+footer .content a :hover {
+  color: #fff !important;
+}
+footer .bottom {
+  /* margin-left: 144px; */
+  padding-bottom: 50px;
+  border-bottom: 2px solid #fff;
+}
+footer .bottom .list {
+  flex-grow: 0;
+  margin-right: 100px;
+}
+footer .content .under {
+  padding: 20px 0;
+}
+footer .content .under .icons {
+  color: #000;
+  /* width: 32px;
+  height: 32px; */
+  background-color: #fff;
+  border-radius: 1000px;
+  padding: 5px 8px;
+  font-size: 18px;
+  margin-right: 20px;
+  transition: 0.4s ease-in;
+}
+footer .content .under .icons:hover {
+  background-color: #ccc;
+  color: #000 !important;
+}
