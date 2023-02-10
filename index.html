@@ -6,12 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- JQuery -->
-  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-    crossorigin="anonymous"></script>
+  <script src="js/jquery-3.6.3.js"></script>
 
-  <script src="js/jquery-3.6.3.min.js"></script>
-  <!-- Main Script file -->
-  <script src="js/main.js"></script>
   <!-- Bootstrap link -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,7 +17,10 @@
 
   <!-- FontAwesome Stylesheet -->
   <link rel="stylesheet" href="css/all.css">
-  <title>Document</title>
+
+  <title>Start and grow your e-commerce business - 3-Day Free Trial</title>
+  <link rel="icon" type="image/x-icon" href="./images/shopify-favicon.webp">
+
 </head>
 
 <body>
@@ -272,9 +271,10 @@
             <div class="email-form max d-flex flex-row justify-content-between align-items-center mt-3"
               data-component-name="email-form-input-wrapper">
               <input type="email" name="email" id="email" placeholder="Enter your email address">
-              <button class="btn ml-4 my-2 my-sm-0" type="submit">Start
+              <button class="btn ml-4 my-2 my-sm-0 validate" id="validation" type="submit">Start
                 free trial</button>
             </div>
+            <div class="error"></div>
             <div class="try shopify-regular max">
               <p class="text-xsm mt-5">Try Shopify free for 3 days, no credit card required. By entering your email, you
                 agree to receive
@@ -283,12 +283,14 @@
           </div>
           <div class="right col-6">
             <div class="right-content d-flex flex-row justify-content-around">
-              <div class="list width-1 d-flex flex-column">
+              <div class="list first width-1 d-flex flex-column">
 
-                <div class="net-sales d-flex flex-column justify-content-start">
-                  <span>Net Sales</span>
-                  <span id="dynamic-number">59.333</span>
-                  <span class="" id="precent"></span>
+                <div class="net-sales d-flex flex-column justify-content-start border-radius">
+                  <span style="font-size: 10px;color: #fff6;">Net Sales</span>
+                  <span class="text-lg">$ <span id="dynamic-number">59.333</span> </span>
+                  <span class="up arrow-up text-sm mr-3"> <span id="precent">1</span>
+                    %
+                  </span>
                 </div>
 
                 <div class="presentation position-relative">
@@ -310,7 +312,7 @@
                 </div>
 
                 <div class="downloads border-radius  d-flex flex-row justify-content-start ">
-                  <img class="object-fit scale mr-2" src="./images/inbox.png" alt=" import" width="24" height="25">
+                  <img class="scale mr-2" src="./images/inbox.png" alt=" import" width="24" height="25">
                   <span id="value"> </span>
                   <span class="ml-2 shopify-regular">
                     <span class="shopify-medium font-w">orders</span> to fulfill
@@ -318,21 +320,18 @@
 
                 </div>
 
-                <div class="presentation position-relative">
-                  <div class="main-img ">
-                    <img class="object-fit scale" src="./images/hero2-small.webp" alt="hero2">
+                <div class="plant d-flex flex-row justify-content-between p-3 align-items-center border-radius">
+                  <div class="plant-img d-flex flex-row align-items-center">
+                    <img class="object-fit scale mr-3" src="./images/plant-large.webp" alt="planet" width="64"
+                      height="64">
+                    <span class="shopify-medium font-w">Plant</span>
                   </div>
-                  <div
-                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
-                    <div class="container">
-                      <img class="object-fit scale" src="./images/TheSill-logo.svg" alt="TheSill-logo">
+                  <div class="price d-flex flex-column align-items-center">
+                    <div class="statues text-sm">
+                      <span class="tick"></span>
+                      <span>paid</span>
                     </div>
-                    <div class="container-present">
-                      <div class="bottom-content">
-                        <h3 class="text-lg">Eliza Blank</h3>
-                        <p class="text-xsm">Founder & CEO</p>
-                      </div>
-                    </div>
+                    <span class="text-sm">$175.25</span>
                   </div>
                 </div>
 
@@ -353,9 +352,130 @@
                     </div>
                   </div>
                 </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale" src="./images/hero2-small.webp" alt="hero2">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/TheSill-logo.svg" alt="TheSill-logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">Eliza Blank</h3>
+                        <p class="text-xsm">Founder & CEO</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
-              <div class="list col-3"></div>
+              <div class="list second width-1 d-flex flex-column">
+
+                <div class="product d-flex flex-row justify-content-between align-items-center border-radius">
+                  <div class="product-img d-flex flex-row align-items-center">
+                    <img class="object-fit scale mr-3" src="./images/product-large.webp" alt="product" width="48"
+                      height="48">
+                    <div class="active mr-3 d-flex flex-column align-items-center">
+                      <div class="statues text-sm">
+                        <span class="text-sm shopify-regular">Active</span>
+                      </div>
+                    </div>
+                    <span class="text-sm">
+                      <span id="stockNum">31</span>
+                      in stock
+                    </span>
+                  </div>
+
+                </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale border-radius" src="./images/hero1-small.webp" alt="hero1">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/A-Morir.svg" alt="A morior Logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">Kerin Rose Gold</h3>
+                        <p class="text-xsm">Founder</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="net-sales d-flex flex-column justify-content-start border-radius">
+                  <span style="font-size: 10px;color: #fff6;">Total Sales</span>
+                  <span class="text-lg">$ <span id="totalNumber">14.555.60</span> </span>
+                  <div class="sale-img" style="padding: 20px;">
+                    <img src="./images/line-graph-large.webp" alt="line graph">
+                  </div>
+                </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale" src="./images/hero6.webp" alt="hero6">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/mrbeast.svg" alt="mr beast Logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">MrBeast</h3>
+                        <p class="text-xsm">Entrepreneur</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="shopify-style d-flex flex-row justify-content-between align-items-center border-radius">
+                  <div class="shopy-img d-flex flex-row align-items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 13"
+                      class="text-white w-4 h-4 relative -top-0.5 left-[-1px] shopy">
+                      <path
+                        d="M7.58113 2.2383C7.58113 2.2383 7.44812 2.27624 7.2296 2.34264C7.1916 2.21933 7.1346 2.07706 7.05859 1.92529C6.81157 1.45103 6.44105 1.19493 6.00402 1.19493C5.97551 1.19493 5.94701 1.19493 5.90901 1.20442C5.89951 1.18545 5.88051 1.17596 5.87101 1.15699C5.68099 0.948317 5.43398 0.853465 5.13946 0.862951C4.56942 0.881921 3.99938 1.28978 3.54334 2.02014C3.22032 2.53234 2.9733 3.17734 2.9068 3.68005C2.25125 3.87924 1.79522 4.02152 1.78572 4.03101C1.4532 4.13534 1.4437 4.14483 1.4057 4.45784C1.34869 4.69497 0.484131 11.382 0.484131 11.382L7.66663 12.6246V2.21933C7.62863 2.22882 7.60013 2.22882 7.58113 2.2383ZM5.91851 2.7505C5.53848 2.86433 5.12045 2.99712 4.71193 3.12043C4.82593 2.67462 5.05395 2.22882 5.31997 1.93478C5.42448 1.83044 5.56699 1.70713 5.7285 1.63125C5.89001 1.97272 5.92801 2.43749 5.91851 2.7505ZM5.14896 1.24236C5.28197 1.24236 5.39597 1.27081 5.49098 1.32773C5.33897 1.40361 5.18696 1.52691 5.04445 1.66919C4.68342 2.05809 4.4079 2.66514 4.2939 3.24373C3.95187 3.34807 3.60985 3.45241 3.29633 3.54726C3.49584 2.64617 4.26539 1.27081 5.14896 1.24236ZM4.03738 6.45922C4.07538 7.06627 5.68099 7.19906 5.776 8.63132C5.84251 9.76006 5.17746 10.5284 4.21789 10.5853C3.05881 10.6612 2.42227 9.97822 2.42227 9.97822L2.66928 8.93485C2.66928 8.93485 3.30583 9.4186 3.81886 9.38066C4.15139 9.36168 4.2749 9.08661 4.26539 8.89691C4.21789 8.10015 2.9068 8.14758 2.82129 6.83862C2.74529 5.74783 3.46734 4.63806 5.06345 4.53372C5.68099 4.49578 5.99452 4.64754 5.99452 4.64754L5.63349 6.01341C5.63349 6.01341 5.22496 5.82371 4.74043 5.86165C4.03738 5.90907 4.02788 6.35488 4.03738 6.45922ZM6.29854 2.63668C6.29854 2.35213 6.26053 1.94426 6.12753 1.6028C6.56456 1.68816 6.77357 2.17191 6.86858 2.46595C6.69756 2.51337 6.50755 2.57029 6.29854 2.63668Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M7.90405 12.5865L10.8873 11.8467C10.8873 11.8467 9.60467 3.18668 9.59517 3.12976C9.58567 3.07285 9.53817 3.03491 9.49066 3.03491C9.44316 3.03491 8.6071 3.01594 8.6071 3.01594C8.6071 3.01594 8.09407 2.52271 7.90405 2.33301V12.5865Z"
+                        fill="currentColor"></path>
+                    </svg>
+                    <div class="shopy-text d-flex flex-column">
+                      <div class="text-sm d-flex flex-row align-items-center justify-content-between">
+                        <span class=" shopify-medium font-w">Shopify</span>
+                        <span class="minutes text-xsm" style="color: rgb(141 144 145);">14m ago</span>
+                      </div>
+                      <p class="text-xsm cha">Cha-Ching! You have a new order for 2 items totalling $140.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="presentation position-relative">
+                  <div class="main-img ">
+                    <img class="object-fit scale" src="./images/hero3-small.webp" alt="hero3">
+                  </div>
+                  <div
+                    class="overlay position-absolute d-flex flex-column justify-content-around align-items-center text-center display-0">
+                    <div class="container">
+                      <img class="object-fit scale" src="./images/huron.svg" alt="Third Crown Logo">
+                    </div>
+                    <div class="container-present">
+                      <div class="bottom-content">
+                        <h3 class="text-lg">Matt Mullenax & Matt Teri</h3>
+                        <p class="text-xsm">Co-Founders, CEO & CDO</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
@@ -363,7 +483,278 @@
     </div>
     <!-- Platform end -->
   </header>
+  <!-- End of header -->
 
+  <!-- Discover Section -->
+  <main class="discover pt-5 mt-5">
+    <div class="content d-flex flex-row justify-content-between">
+      <div class="earth">
+        <img src="./images/africaa.png" alt="">
+      </div>
+      <div class="container">
+        <div class="left d-flex flex-column justify-content-end">
+          <div class="head-top">
+            <h2 class="font-w shopify-medium cover d-flex flex-column">
+              Discover why millions of entrepreneurs chose Shopify to build their business —<span class="hello">from
+                hello
+                world to
+                IPO.</span></h2>
+          </div>
+          <div class="numbers d-flex flex-column">
+            <div class="num-top justify-content-start mt-4 d-flex flex-row">
+              <div class="globe d-flex millions">
+                <div class="desc ml-4 d-flex flex-column">
+                  <h2>Millions</h2>
+                  <span class="shopify-regular" style="color: rgb(87 87 87);">of merchants worldwide </span>
+                </div>
+              </div>
+              <div class="globe d-flex countries">
+                <div class="desc ml-4 d-flex flex-column">
+                  <h2>170+</h2>
+                  <span class="shopify-regular" style="color: rgb(87 87 87);">countries represented </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="num-bottom justify-content-start d-flex flex-row">
+              <div class="globe d-flex millions">
+                <div class="desc ml-4 d-flex flex-column">
+                  <h2>10%</h2>
+                  <span class="shopify-regular" style="color: rgb(87 87 87);">of total US ecommerce </span>
+                </div>
+              </div>
+              <div class="globe d-flex countries">
+                <div class="desc ml-4 d-flex flex-column">
+                  <h2><sup>$</sup>444b+<sup class="text-sm font-w">USD</sup></h2>
+                  <span class="shopify-regular" style="color: rgb(87 87 87);">global economic activity</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="explore mt-5">
+        <p class="text-uppercase base-text ">explore the world's largest commerce community</p>
+        <div class="community d-flex flex-row">
+          <div class="card mr-4 d-flex flex-column">
+            <div class="mb-4">
+              <img src="./images/creators.svg" alt="creators" height="56" width="56">
+            </div>
+            <div class="text">
+              <h3 class="shopify-medium base-text font-w">Creators</h3>
+              <p class="shopify-regular" style="color: rgb(87 87 87);">Turn followers into customers with commerce tools
+                for creators</p>
+            </div>
+          </div>
+
+          <div class="card mr-4 d-flex flex-column">
+            <div class="mb-4">
+              <img src="./images/dev.svg" alt="developers" height="56" width="56">
+            </div>
+            <div class="text">
+              <h3 class="shopify-medium base-text font-w">Developers</h3>
+              <p class="shopify-regular" style="color: rgb(87 87 87);">Build the future of commerce with Shopify's
+                powerful API</p>
+            </div>
+          </div>
+
+          <div class="card mr-4 d-flex flex-column">
+            <div class="mb-4">
+              <img src="./images/partners.svg" alt="partners" height="56" width="56">
+            </div>
+            <div class="text">
+              <h3 class="shopify-medium base-text font-w">Partners</h3>
+              <p class="shopify-regular" style="color: rgb(87 87 87);">Offer your expertise to Shopify merchants all
+                over the world</p>
+            </div>
+          </div>
+
+          <div class="card mr-4 d-flex flex-column">
+            <div class="mb-4">
+              <img src="./images/infinity.svg" alt="infinity" height="56" width="56">
+            </div>
+            <div class="text">
+              <h3 class="shopify-medium base-text font-w">Plus</h3>
+              <p class="shopify-regular" style="color: rgb(87 87 87);">A commerce solution for growing digital brands.
+              </p>
+            </div>
+          </div>
+
+          <div class="card d-flex flex-column">
+            <div class="mb-4">
+              <img src="./images/layers.svg" alt="layers" height="56" width="56">
+            </div>
+            <div class="text">
+              <h3 class="shopify-medium base-text font-w">Enterprise</h3>
+              <p class="shopify-regular" style="color: rgb(87 87 87);">The modern, composable stack for enterprise
+                retail.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- Discover Section end -->
+
+  <!-- Sell section -->
+  <section class="sell">
+    <div class="container">
+      <div class="head d-flex flex-row">
+        <div class="texts card">
+          <h4 class="text-uppercase base-text">SALES CHANNELS </h4>
+          <p>Sell to every buyer, everywhere </p>
+        </div>
+        <div class="describe card">
+          <p class="base-text shopify-regular">Sell online, in person, and around the world with the marketing tools,
+            social
+            integrations,
+            and sales
+            channels you need to get your products in front of customers. </p>
+          <div class="link d-flex flex-row justify-content-between align-items-center">
+            <a href="https://www.shopify.com/sell">
+              Start selling
+            </a>
+            <span class="arrows"></span>
+          </div>
+        </div>
+      </div>
+      <div class="images d-flex flex-row">
+        <div class="im">
+          <img src="./images/sell-buyer-small.webp" alt="buyer">
+        </div>
+        <div class="im">
+          <img src="./images/marketing2-small.webp" alt="marketing">
+        </div>
+        <div class="im">
+          <img src="./images/marketing3-small.webp" alt="marketing">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Sell Section -->
+
+  <!-- Shop Section -->
+  <section class="shop">
+    <div class="container">
+      <div class="content d-flex flex-row">
+        <div class="left col-6">
+          <img src="./images/shoppay.png" alt="shop">
+        </div>
+        <div class="right d-flex col-6 justify-content-end">
+          <div class="describe card border-0 col-8 justify-content-center flex-wrap">
+            <h4 class="text-uppercase base-text fast">fast, reliable checkout</h4>
+            <h2 class="text-lg font-w shopify-medium">The best-converting checkout on the planet</h2>
+            <p class="base-text shopify-regular">Back your business with Shop Pay—the one-click checkout that's built to
+              convert. </p>
+            <div class="link d-flex flex-row justify-content-between align-items-center">
+              <a href="https://www.shopify.com/checkout">
+                Seize every sale
+              </a>
+              <span class="arrows"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Shop end -->
+
+  <section class="sale">
+    <div class="container">
+      <div class="content d-flex flex-row">
+        <div class="right d-flex col-6 justify-content-start">
+          <div class="describe card border-0 col-8 justify-content-center flex-wrap">
+            <h4 class="text-uppercase base-text point shopify-regular">point of sale</h4>
+            <h2 class="text-lg font-w shopify-medium">Flexible point of sale to power your retail store</h2>
+            <p class="base-text shopify-regular">A POS system that allows customers to shop their way, from online to
+              checkout line. </p>
+            <div class="link d-flex flex-row justify-content-between align-items-center">
+              <a href="https://www.shopify.com/pos">
+                Meet Shopify POS
+              </a>
+              <span class="arrows"></span>
+            </div>
+          </div>
+        </div>
+        <div class="left col-6">
+          <img src="./images/pos-2-small.webp" alt="shop">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SHOPIFY SUPPORT -->
+  <section class="support">
+    <div class="container">
+      <div class="content d-flex flex-column justify-content-center align-items-center">
+        <div class="head">
+          <h4 class="text-uppercase base-text fast" style="color: rgb(99 221 185 );">spotify support</h4>
+          <h2 class="help text-lg font-w shopify-medium">The help you need, when you need it</h2>
+        </div>
+
+        <div class="items d-flex flex-column justify-content-center">
+          <div class="cards-top d-flex flex-row justify-content-around">
+            <div class="card d-flex flex-column">
+              <img src="./images/objective-analysis.png" alt="analytics" width="56" height="56">
+              <h2 class="mb-4">Blog</h2>
+              <p>Get all the marketing and business strategy tips you need to help you run an online business.</p>
+              <button class="btn shopify-regular flex-row d-flex">Read <span class="arrow-sm"></span></button>
+            </div>
+            <div class="card d-flex flex-column">
+              <img src="./images/study.png" alt="study" width="56" height="56">
+              <h2 class="mb-4">Online Courses</h2>
+              <p>Learn tried-and-tested business tips with instant access to lessons from successful entrepreneurs.</p>
+              <button class="btn shopify-regular flex-row d-flex">Learn <span class="arrow-sm"></span></button>
+            </div>
+          </div>
+
+          <div class="cards-top d-flex flex-row justify-content-around mt-4">
+            <div class="card d-flex flex-column">
+              <img src="./images/community.png" alt="community" width="56" height="56">
+              <h2 class="mb-4">Community</h2>
+              <p>Connect with a community of brands, partners, and fellow merchants who understand Shopify.</p>
+              <button class="btn shopify-regular flex-row d-flex">Discuss <span class="arrow-sm"></span></button>
+            </div>
+            <div class="card d-flex flex-column">
+              <img src="./images/information.png" alt="information" width="56" height="56">
+              <h2 class="mb-4">Help Center</h2>
+              <p>Find answers with a dedicated helpdesk resource full of articles and videos from our Support team.</p>
+              <button class="btn shopify-regular flex-row d-flex">Get Help <span class="arrow-sm"></span></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End SHOPIFY SUPPORT -->
+
+  <!-- Grow section -->
+  <section class="grow">
+    <div class="container">
+      <div class="content d-flex flex-column align-items-center justify-content-center">
+        <h2 class="shopify-medium font-w mb-5">
+          Grow your business here
+        </h2>
+        <p class="shopify-regular mb-5">Whether you want to sell products down the street or around the world, we have
+          all
+          the tools you need.</p>
+        <button class="btn">Start free trial</button>
+      </div>
+    </div>
+  </section>
+  <!-- End of grow section -->
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="content">
+
+      </div>
+    </div>
+  </footer>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -376,8 +767,83 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+
   <!-- Main Script file -->
   <script src="js/main.js"></script>
+
+  <!-- Writing Data into Firebase realtime database -->
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+    import { getDatabase, set, ref, push, child, onValue, get } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-database.js";
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyB5-6xu7jyF-VJEmdKA0Ka2zQOvuq8eXsw",
+      authDomain: "shopify-q.firebaseapp.com",
+      projectId: "shopify-q",
+      storageBucket: "shopify-q.appspot.com",
+      messagingSenderId: "1075665477033",
+      appId: "1:1075665477033:web:5dcc68c22e41a7428138b8",
+      measurementId: "G-77LD8K8QSC",
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+    const submit = document.querySelector(".validate");
+    submit.addEventListener("click", (e) => {
+      let email = document.getElementById("email").value;
+      // const user = prompt("Please enter your name ");
+      const userId = push(child(ref(database), "users")).key;
+      set(ref(database, "users/" + userId), {
+        email: email,
+        // user: user
+      });
+    });
+  </script>
+  <!-- Import the functions you need from the SDKs you need -->
+  <!-- <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+    // import { getDatabase, set, ref, push, child, onValue, get } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"; -->
+  <!-- 
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    // var firebaseConfig = {
+    //   apiKey: "AIzaSyB5-6xu7jyF-VJEmdKA0Ka2zQOvuq8eXsw",
+    //   authDomain: "shopify-q.firebaseapp.com",
+    //   projectId: "shopify-q",
+    //   storageBucket: "shopify-q.appspot.com",
+    //   messagingSenderId: "1075665477033",
+    //   appId: "1:1075665477033:web:5dcc68c22e41a7428138b8",
+    //   measurementId: "G-77LD8K8QSC"
+    // };
+    // const app = initializeApp(firebaseConfig);
+    // const database = getDatabase(app);
+
+    // validation.addEventListener("click", (e) => {
+    // let email = document.getElementById("email").value;
+
+    //   const userId = push(child(ref(database), "users")).key;
+    //   set(ref(database, "users/" + userId), {
+    //     email: email
+    //   })
+    // })
+  //   import { getDatabase, ref, set } from "firebase/database";
+
+  //   function writeUserData(userId, email) {
+  //     const app = initializeApp(firebaseConfig);
+  //     const database = getDatabase(app);
+  //     const userId = push(child(ref(database), "users")).key;
+
+  //     set(ref(database, 'users/' + userId), {
+  //       email: email
+  //     });
+  //   }
+  // </script> -->
+
 </body>
 
 
